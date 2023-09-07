@@ -7,28 +7,27 @@ Ex.:
 Schimbă 10RON în USD:
 Mai întâi 10RON se schimbă în EUR, apoi EUR în USD.
 10 * 0.2 / 0.9 = 2.22USD*/
-function convertCurrency(valoare, monedaSursa, monedaSchimb) {
-    const cursuriSchimb = {
+function convertCurrency(value, fromCurrency, toCurrency) {
+    const convertedValue = {
         EUR: 1,
         USD: 0.9,
         MDL: 0.05,
         RON: 0.2
     };
 
-    if (!(monedaSursa in cursuriSchimb) || !(monedaSchimb in cursuriSchimb)) {
+    if (!(fromCurrency in convertedValue) || !(toCurrency in convertedValue)) {
         return "Monede invalide!";
     }
 
-    const valoareInEUR = valoare / cursuriSchimb[monedaSursa];
-    const valoareInMonedaSchimb = valoareInEUR * cursuriSchimb[monedaSchimb];
+    const valueInEUR = value / convertedValue[fromCurrency];
+    const valueToCurrency = valueInEUR * convertedValue[toCurrency];
 
-    return `${valoare} ${monedaSursa} = ${valoareInMonedaSchimb.toFixed(2)} ${monedaSchimb}`;
+    return `${value} ${fromCurrency} = ${valueToCurrency.toFixed(2)} ${toCurrency}`;
 }
 
-const valoareDeConvertit = 10;
-const monedaSursa = "RON";
-const monedaSchimb = "USD";
+const valueToCurrency = 10;
+const fromCurrency = "RON";
+const toCurrency = "USD";
 
-const rezultatConversie = convertCurrency(valoareDeConvertit, monedaSursa, monedaSchimb);
-console.log(rezultatConversie); 
-
+const resultConversion = convertCurrency(valueToCurrency, fromCurrency, toCurrency);
+console.log(resultConversion);

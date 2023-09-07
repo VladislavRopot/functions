@@ -1,6 +1,6 @@
 //7.Scrie o funcție care primește ca parametru un număr de la 1 la 7(numărul zilei săptămânii) și returnează numele zilei respective.
-function numeleZileiSaptamanii(numarZi) {
-    switch (numarZi){
+function dayOfTheWeek(numberDay) {
+    switch (numberDay){
         case 1:
             return "luni";
         case 2:
@@ -20,6 +20,6 @@ function numeleZileiSaptamanii(numarZi) {
     }  
 }
 
-const numarulZileiSaptamanii = 5;
-const numeZi = numeleZileiSaptamanii(numarulZileiSaptamanii);
-console.log("Ziua corespunzatoare numarului " + numarulZileiSaptamanii + " este " + numeZi + ".");
+const numberDayOfTheWeek = 5;
+const numberDay = dayOfTheWeek(numberDayOfTheWeek);
+console.log("Ziua corespunzatoare numarului " + numberDayOfTheWeek + " este " + numberDay);
